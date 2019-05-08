@@ -3,8 +3,28 @@ module.exports = {
     // default font size in pixels for all tabs
     fontSize: 12,
 
+    hyperStatusLine: {
+      dirtyColor: 'salmon',
+      aheadColor: 'ivory',
+    },
+
+    hyperCustomTouchbar: [
+      { 
+        label: 'git',
+        options: [
+          { label: 'status', command: 'git status' },
+          { label: 'diff', command: 'git diff' },
+          { label: 'set-upstream', command: 'git push --set-upstream origin ', esc: false, prompt: true }
+        ]
+      },
+      { label: 'Dev Mode', command: 'cd ~/Documents/dev', backgroundColor: '#FFAB00', esc: true, prompt: false },
+      { label: 'Go Fish', command: 'fish', backgroundColor: '#F44336', esc: true, prompt: false },
+    ],
+
     // font family with optional fallbacks
-    fontFamily: 'Menlo, "Operator Mono", "Lucida Console", monospace',
+    // fontFamily: 'Menlo, "Operator Mono", "Lucida Console", monospace',
+    fontFamily: 'Fira Code, Menlo, "DejaVu Sans Mono", "Lucida Console", "monospace',
+
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: 'rgba(248,28,229,0.8)',
@@ -112,7 +132,8 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
     "shades-of-purple-hyper",
-    "hyper-spotify"
+    "hyper-statusline",
+    "hyper-custom-touchbar"
   ],
   hyperTransparent: {
     backgroundColor: '#4b4',
